@@ -100,8 +100,8 @@ h1 {
 }
 
 .role-selection {
-    height: 80vh;
-    width: 80vh;
+    height: auto;
+    width: 150vh;
     display: none;
     position: fixed;
     top: 50%;
@@ -126,8 +126,7 @@ h1 {
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    max-width: 40%;
-    max-height: 40%;
+    display: inline-block;
     
 }
 
