@@ -126,13 +126,15 @@ h1 {
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
+    max-width: 40%;
+    max-height: 40%;
+    
 }
 
 .role-option:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    width: 50%;
-    height: 50%;
+    
 }
 
 .citizen {
@@ -144,6 +146,9 @@ h1 {
     background: #2979ff;
     color: white;
     display: inline-block;
+}
+img {
+    object-fit: contain;
 }
 
 @keyframes fadeUp {
