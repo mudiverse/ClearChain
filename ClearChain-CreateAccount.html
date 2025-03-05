@@ -3,122 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create an account</title>
+    <title>Create Account - Clear Chain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-         /* General body styling */
+        /* Fixed Background */
         body {
-            background-color: white;
-            color: black;
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background: url(./7e208a0ba792fe54245f88f82ef56550.jpg);
-            opacity: 0; /* Start with 0 opacity for fade-in animation */
-            animation: fadeIn 1s ease-in forwards; /* Fade-in animation */
+            background: linear-gradient(135deg, #1a237e, #0d47a1);
+            opacity: 20;
+            animation: fadeIn 1s ease-in forwards;
+            background: url(./7e208a0ba792fe54245f88f82ef56550.jpg) no-repeat center center fixed;
+            background-size: cover;
         }
 
-        /* Fade-in animation */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
+            to { opacity: 1; }
+        }
+
+        /* Glassmorphism Container */
+        .nav {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(36px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 450px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(20px);
+            opacity: 10%;
+            animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes slideUp {
+            to { 
+                transform: translateY(0);
                 opacity: 1;
             }
         }
 
-        /* Navigation div styling */
-        .nav {
-            background-color: white;
-            padding: 20px;
-            border: 2px solid black;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-            transform: scale(0.9); /* Start slightly smaller for scale animation */
-            animation: scaleUp 0.5s ease-in-out forwards; /* Scale-up animation */
-        }
-
-        /* Scale-up animation */
-        @keyframes scaleUp {
-            from {
-                transform: scale(0.9);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-
-        /* Paragraph styling */
+        /* Rest of the CSS remains the same as previous version */
         .nav p {
-            margin: 10px 0 5px;
-            font-weight: bold;
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 15px 0 8px;
+            text-align: left;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
-        /* Input field styling */
-        .nav input[type="text"],
-        .nav input[type="number"],
-        .nav input[type="date"] {
-            width: 90%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid black;
-            border-radius: 5px;
-            background-color: white;
-            color: black;
-            font-size: 16px;
-            transition: border-color 0.3s ease; /* Smooth transition for input focus */
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
         }
 
-        /* Input focus effect */
-        .nav input[type="text"]:focus,
-        .nav input[type="number"]:focus,
-        .nav input[type="date"]:focus {
-            border-color: #555; /* Darker border on focus */
-        }
-
-        /* Button styling */
-        .nav input[type="button"] {
-            width: 100%;
-            padding: 10px;
-            background-color: black;
-            color: white;
+        .nav input {
+            width: 85%;
+            padding: 14px 20px;
+            padding-left: 45px;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #1a237e;
+            font-size: 1.1rem;
+        }
+
+        .nav input[type="button"] {
+            background: linear-gradient(45deg, #00e676, #00c853);
+            color: white;
+            width: 80%;
+            padding: 16px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+            display: block;
+            /* margin-left: auto;
+            margin-right: auto; */
+            margin:auto;
         }
 
-        /* Button hover effect */
         .nav input[type="button"]:hover {
-            background-color: #333; /* Darker background on hover */
-            transform: scale(1.05); /* Slightly scale up on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 230, 118, 0.3);
+            width: 50%;
+            border-radius: 30px;
         }
 
-        /* Button active effect */
-        .nav input[type="button"]:active {
-            transform: scale(0.95); /* Slightly scale down on click */
+        .nav a {
+            color: #00e676;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
+
+        /* Rest of the CSS... */
     </style>
 </head>
 <body>
     <div class="nav">
-        <p>Full Name</p>
-        <input type="text"><br>
-        <p>AADHAR Number</p>
-        <input type="text" id="AADHAR"><br>
-        <p>Phone number</p>
-        <input type="number"><br>
-        <p>Date of Birth</p>
-        <input type="date"><br>
-        <input type="button" value="Create"><br>
-        <p>Dont have an account? <a href="./ClearChain-LoginCitizen.html">Create one</a></p>
+        <!-- Form content remains the same -->
+        <div class="input-group">
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" placeholder="Full Name">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-id-card input-icon"></i>
+            <input type="text" id="AADHAR" placeholder="AADHAR Number" maxlength="12">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-phone input-icon"></i>
+            <input type="tel" placeholder="Phone Number">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-calendar-day input-icon"></i>
+            <input type="date">
+        </div>
+
+        <input type="button" value="Create Account">
+        
+        <p style= "text-align: center; margin-top: 20px; color: rgba(255, 255, 255, 0.8); font-weight: bold;">
+            Already have an account? <a href="./ClearChain-LoginCitizen.html">Sign In</a>
+        </p>
     </div>
+
+    <script>
+        // JavaScript remains the same
+        document.getElementById('AADHAR').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '').slice(0, 12);
+        });
+
+        document.querySelector('input[type="button"]').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+        });
+    </script>
 </body>
 </html>
