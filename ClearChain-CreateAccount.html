@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an account</title>
+    <style>
+         /* General body styling */
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url(./7e208a0ba792fe54245f88f82ef56550.jpg);
+            opacity: 0; /* Start with 0 opacity for fade-in animation */
+            animation: fadeIn 1s ease-in forwards; /* Fade-in animation */
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Navigation div styling */
+        .nav {
+            background-color: white;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transform: scale(0.9); /* Start slightly smaller for scale animation */
+            animation: scaleUp 0.5s ease-in-out forwards; /* Scale-up animation */
+        }
+
+        /* Scale-up animation */
+        @keyframes scaleUp {
+            from {
+                transform: scale(0.9);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* Paragraph styling */
+        .nav p {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        /* Input field styling */
+        .nav input[type="text"],
+        .nav input[type="number"],
+        .nav input[type="date"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            font-size: 16px;
+            transition: border-color 0.3s ease; /* Smooth transition for input focus */
+        }
+
+        /* Input focus effect */
+        .nav input[type="text"]:focus,
+        .nav input[type="number"]:focus,
+        .nav input[type="date"]:focus {
+            border-color: #555; /* Darker border on focus */
+        }
+
+        /* Button styling */
+        .nav input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+        }
+
+        /* Button hover effect */
+        .nav input[type="button"]:hover {
+            background-color: #333; /* Darker background on hover */
+            transform: scale(1.05); /* Slightly scale up on hover */
+        }
+
+        /* Button active effect */
+        .nav input[type="button"]:active {
+            transform: scale(0.95); /* Slightly scale down on click */
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <p>Full Name</p>
+        <input type="text"><br>
+        <p>AADHAR Number</p>
+        <input type="text" id="AADHAR"><br>
+        <p>Phone number</p>
+        <input type="number"><br>
+        <p>Date of Birth</p>
+        <input type="date"><br>
+        <input type="button" value="Create"><br>
+        <p>Dont have an account? <a href="./ClearChain-LoginCitizen.html">Create one</a></p>
+    </div>
+</body>
+</html>
