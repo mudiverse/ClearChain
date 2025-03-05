@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Clear Chain</title>
+    <title>Create Account - Clear Chain</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        
-        /* Consistent with Previous Theme */
+        /* Fixed Background */
         body {
             margin: 0;
             padding: 0;
@@ -16,27 +15,28 @@
             justify-content: center;
             align-items: center;
             background: linear-gradient(135deg, #1a237e, #0d47a1);
-            opacity: 0;
+            opacity: 20;
             animation: fadeIn 1s ease-in forwards;
-            background: url(./Devolved-Parliament-768x452.jpg);
-            background-size: cover  ;
+            background: url(./Devolved-Parliament-768x452.jpg) no-repeat center center fixed;
+            background-size: cover;
         }
 
         @keyframes fadeIn {
             to { opacity: 1; }
         }
 
+        /* Glassmorphism Container */
         .nav {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(36px);
             border-radius: 20px;
             padding: 40px;
             width: 450px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transform: translateY(20px);
-            opacity: 0.2;
+            opacity: 10%;
             animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
 
@@ -47,19 +47,28 @@
             }
         }
 
-        /* Input Styling Matching Previous Theme */
+        /* Rest of the CSS remains the same as previous version */
+        .nav p {
+            color: #fff;
+            font-size: 1.1rem;
+            margin: 15px 0 8px;
+            text-align: left;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
         .input-group {
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .nav input {
-            width: 90%;
-            padding: 14px 0px;
-            margin-left: auto;
-            margin-right: auto;
+            width: 85%;
+            padding: 14px 20px;
             padding-left: 45px;
             border: none;
+            margin-left: auto;
+            margin-right: auto;
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.9);
             font-size: 1rem;
@@ -83,7 +92,6 @@
             font-size: 1.1rem;
         }
 
-        /* Consistent Button Styling */
         .nav input[type="button"] {
             background: linear-gradient(45deg, #e1813c, #c8a300);
             color: white;
@@ -94,45 +102,20 @@
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 20px;
+            margin-top: 15px;
             position: relative;
             overflow: hidden;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            /* margin-left: auto;
+            margin-right: auto; */
+            margin:auto;
         }
 
         .nav input[type="button"]:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(230, 188, 0, 0.408);
+            box-shadow: 0 5px 15px rgba(0, 230, 118, 0.3);
             width: 50%;
             border-radius: 30px;
-        }
-
-        .nav input[type="button"]::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.2), 
-                transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s ease;
-        }
-
-        .nav input[type="button"]:hover::after {
-            left: 150%;
-        }
-
-        /* Additional Link Styling */
-        .nav p {
-            text-align: center;
-            color: rgb(255, 255, 255);
-            margin-top: 25px;
         }
 
         .nav a {
@@ -142,38 +125,49 @@
             transition: all 0.3s ease;
         }
 
-        .nav a:hover {
-            text-decoration: underline;
-            opacity: 0.9;
-        }
-
-        @media (max-width: 480px) {
-            .nav {
-                width: 90%;
-                padding: 30px;
-            }
-        }
+        /* Rest of the CSS... */
     </style>
 </head>
 <body>
     <div class="nav">
+        <!-- Form content remains the same -->
+        <div class="input-group">
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" placeholder="Full Name">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-id-card input-icon"></i>
+            <input type="text" id="AADHAR" placeholder="AADHAR Number" maxlength="12">
+        </div>
         <div class="input-group">
             <i class="fas fa-id-card input-icon"></i>
             <input type="text" id="AADHAR" placeholder="Officer ID">
         </div>
 
-        <input type="button" value="Send OTP">
+        <div class="input-group">
+            <i class="fas fa-phone input-icon"></i>
+            <input type="tel" placeholder="Phone Number">
+        </div>
 
-        <p style="background-color: aliceblue; border-radius: 20px; color: #1a237e; width: 70%; margin-left: auto; margin-right: auto;">Don't have an account? <a href="./ClearChain-CreateOfficer.html">Create one</a></p>
+        <div class="input-group">
+            <i class="fas fa-calendar-day input-icon"></i>
+            <input type="date">
+        </div>
+
+        <input type="button" value="Create Account">
+        
+        <p style="background-color: aliceblue; border-radius: 20px; color: #1a237e; width: 80%; margin-left: auto; margin-right: auto; text-align: center;">
+            Already have an account? <a href="./ClearChain-CreateOfficer.html">Sign In</a>
+        </p>
     </div>
 
     <script>
-        // Consistent AADHAR Input Handling
+        // JavaScript remains the same
         document.getElementById('AADHAR').addEventListener('input', function(e) {
             this.value = this.value.replace(/\D/g, '').slice(0, 12);
         });
 
-        // Button Animation Consistency
         document.querySelector('input[type="button"]').addEventListener('click', function() {
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {

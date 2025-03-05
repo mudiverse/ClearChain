@@ -100,6 +100,8 @@ h1 {
 }
 
 .role-selection {
+    height: 80vh;
+    width: 80vh;
     display: none;
     position: fixed;
     top: 50%;
@@ -111,6 +113,7 @@ h1 {
     text-align: center;
     color: #1a237e;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    
 }
 
 .role-selection h2 {
@@ -128,15 +131,19 @@ h1 {
 .role-option:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 50%;
+    height: 50%;
 }
 
 .citizen {
     background: #00e676;
+    display: inline-block;
 }
 
 .admin {
     background: #2979ff;
     color: white;
+    display: inline-block;
 }
 
 @keyframes fadeUp {
