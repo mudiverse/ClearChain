@@ -18,7 +18,12 @@
             opacity: 0;
             animation: fadeIn 1s ease-in forwards;
             background: url(./7e208a0ba792fe54245f88f82ef56550.jpg);
+<<<<<<< HEAD
             background-size: cover  ;
+=======
+            background-size: cover;
+            background-position: center;
+>>>>>>> 9d5a8628615c12c8231e2d4a4e8b69fe6748cf4f
         }
 
         @keyframes fadeIn {
@@ -161,13 +166,12 @@
             <input type="text" id="AADHAR" placeholder="AADHAR Number">
         </div>
 
-        <input type="button" value="Send OTP">
+        <input type="button" value="Proceed" onclick="addPasswordField()">
 
         <p style="background-color: aliceblue; border-radius: 20px; color: #1a237e; width: 70%; margin-left: auto; margin-right: auto;">Don't have an account? <a href="./ClearChain-CreateAccount.html">Create one</a></p>
     </div>
 
     <script>
-        // Consistent AADHAR Input Handling
         document.getElementById('AADHAR').addEventListener('input', function(e) {
             this.value = this.value.replace(/\D/g, '').slice(0, 12);
         });
@@ -179,6 +183,32 @@
                 this.style.transform = 'scale(1)';
             }, 200);
         });
+
+        function addPasswordField() {
+            alert('Password is your date of birth (ddmmyyyy)');
+
+            // Create new input group for password
+            const passwordInputGroup = document.createElement('div');
+            passwordInputGroup.className = 'input-group';
+
+            // Create icon for password input
+            const passwordIcon = document.createElement('i');
+            passwordIcon.className = 'fas fa-lock input-icon';
+
+            // Create password input field
+            const passwordInput = document.createElement('input');
+            passwordInput.type = 'password';
+            passwordInput.id = 'password';
+            passwordInput.placeholder = 'Password';
+
+            // Append icon and input to the input group
+            passwordInputGroup.appendChild(passwordIcon);
+            passwordInputGroup.appendChild(passwordInput);
+
+            // Insert the new input group before the "Proceed" button
+            const proceedButton = document.querySelector('input[type="button"]');
+            proceedButton.parentNode.insertBefore(passwordInputGroup, proceedButton);
+        }
     </script>
 </body>
 </html>
