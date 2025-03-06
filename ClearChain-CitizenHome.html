@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Hub - Clear Chain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+
+        /* Consistent with Previous Theme */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a237e, #0d47a1);
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            background: url(./f10288725c82d5b89b9e2beb935f3711.jpg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            filter: blur(0);
+            z-index: -1;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .navbar a {
+            color: rgb(128, 120, 60);
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+            font-size: 1.3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(20px);
+            opacity: 0.2;
+            animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes slideUp {
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .func {
+            width: 60%;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 15px;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            text-shadow: black 1px 1px 2px;
+        }
+
+        .func:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .func input {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: rgb(99, 94, 53);
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 20px;
+            box-sizing: border-box;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .func input:hover {
+            color: #956223;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .func::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .func:hover::after {
+            left: 150%;
+        }
+
+        #logo {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+
+            .func {
+                width: 100%;
+                height: 120px;
+                margin: 10px 0;
+            }
+
+            .func input {
+                font-size: 16px;
+            }
+
+            #logo {
+                font-size: 1.5rem;
+                color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/03/06/05/20250306052609-1AV9YWFC.js"></script>
+    
+    <div class="navbar">
+        <div class="logo">
+            <a href="#" id="logo">Clear Chain</a>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Profile</a>
+            <a href="#">Services</a>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="func">
+            <input type="button" value="Complaint Window">
+        </div>
+        <div class="func">
+            <input type="button" value="Headlines">
+        </div>
+        <div class="func">
+            <input type="button" value="Approvals">
+        </div>
+
+    </div>
+</body>
+</html>

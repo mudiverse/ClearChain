@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Clear Chain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Fixed Background */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a237e, #0d47a1);
+            opacity: 20;
+            animation: fadeIn 1s ease-in forwards;
+            background: url(./f10288725c82d5b89b9e2beb935f3711.jpg) no-repeat center center fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Glassmorphism Container */
+        .nav {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(36px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 450px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(20px);
+            opacity: 10%;
+            animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes slideUp {
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Rest of the CSS remains the same as previous version */
+        .nav p {
+            color: #fff;
+            font-size: 1.2rem; /* Increased font size */
+            margin: 15px 0 8px;
+            text-align: left;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
+        }
+
+        .input-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .nav input {
+            width: 85%;
+            padding: 14px 20px;
+            padding-left: 45px;
+            border: none;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #1a237e;
+            font-size: 1.1rem;
+        }
+
+        .nav input[type="button"] {
+            background: linear-gradient(45deg, #00e676, #00c853);
+            color: white;
+            width: 80%;
+            padding: 16px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+            display: block;
+            /* margin-left: auto;
+            margin-right: auto; */
+            margin:auto;
+        }
+
+        .nav input[type="button"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 230, 118, 0.3);
+            width: 50%;
+            border-radius: 30px;
+        }
+
+        .nav a {
+            color: #00e676;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 1.2rem; /* Increased font size */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
+        }
+
+        /* Rest of the CSS... */
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <!-- Form content remains the same -->
+        <div class="input-group">
+            <i class="fas fa-user input-icon"></i>
+            <input type="text" placeholder="Full Name">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-id-card input-icon"></i>
+            <input type="text" id="AADHAR" placeholder="AADHAR Number" maxlength="12">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-phone input-icon"></i>
+            <input type="tel" placeholder="Phone Number">
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-calendar-day input-icon"></i>
+            <input type="date">
+        </div>
+
+        <input type="button" value="Create Account">
+        
+        <p style=" border-radius: 20px; color: #ffffff; width: 80%; margin-left: auto; margin-right: auto; text-align: center;" text-shadow: black 2px 2px 2px;>
+            Already have an account? <a href="./ClearChain-LoginCitizen.html">Sign In</a>
+        </p>
+    </div>
+
+    <script>
+        // JavaScript remains the same
+        document.getElementById('AADHAR').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\D/g, '').slice(0, 12);
+        });
+
+        document.querySelector('input[type="button"]').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+        });
+    </script>
+</body>
+</html>
