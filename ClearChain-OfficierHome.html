@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url(./back1.jpg) no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0);
+            padding: 10px 20px;
+            backdrop-filter: blur(10px); 
+            z-index: 1000;
+            text-shadow: black 1px 1px 2px;
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .navbar .buttons {
+            display: flex;
+            gap: 15px; 
+        }
+
+        .navbar .buttons button {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar .buttons button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; 
+            align-items: center; 
+            margin-top: 60px; 
+        }
+
+        .welcome-text {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px; /* Space between text and buttons */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+        }
+
+        .button-row {
+            display: flex; /* Make buttons horizontal */
+            justify-content: center; /* Center buttons horizontally */
+            gap: 20px; /* Space between buttons */
+        }
+
+        .func input[type="button"] {
+            background-color: #d38143; 
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        .func input[type="button"]:hover {
+            background-color: #ed8e45;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(230, 188, 0, 0.408);
+            translate: translateY(10px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <!-- Logo on the left -->
+        <div class="logo">Clear Chain</div>
+
+        <!-- Buttons on the right -->
+        <div class="buttons">
+            <button>About</button>
+            <button>Logout</button>
+        </div>
+    </div>
+
+    <!-- Container for Welcome Text and Buttons -->
+    <div class="container">
+        <!-- Welcome Officer Text -->
+        <div class="welcome-text">Welcome Officer</div>
+
+        <!-- Horizontal Buttons -->
+        <div class="button-row">
+            <div class="func"><input type="button" value="Forms"></div>
+            <div class="func"><input type="button" value="Notice"></div>
+            <div class="func"><input type="button" value="Tenders"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
