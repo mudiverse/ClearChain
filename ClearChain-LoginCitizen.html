@@ -67,7 +67,7 @@
       color: #1a237e;
       font-size: 1.1rem;
     }
-    .nav a.button, .nav input[type="submit"] {
+    .nav .button {
       background: linear-gradient(45deg, #00e676, #00c853);
       color: white;
       width: 80%;
@@ -86,7 +86,7 @@
       border-radius: 8px;
       margin: auto;
     }
-    .nav a.button:hover, .nav input[type="submit"]:hover {
+    .nav .button:hover {
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(0, 230, 118, 0.3);
       width: 50%;
@@ -108,7 +108,7 @@
       <i class="fas fa-id-card input-icon"></i>
       <input type="text" id="userId" placeholder="5-digit ID">
     </div>
-    <button class="button" id="loginBtn">Proceed</button>
+    <button type="button" class="button" id="loginBtn">Proceed</button>
     <p style="border-radius: 20px; color: #ffffff; width: 80%; margin: auto; text-align: center;">
       Don't have an account? <a href="./ClearChain-CreateAccount.html">Create one</a>
     </p>
