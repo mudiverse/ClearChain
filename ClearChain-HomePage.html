@@ -3,10 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Clear Chain - Corruption Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="citizen"><img src="" alt=""></div>
-    <div class="officer"></div>
+
+    <nav class="navbar">
+        <div class="logo">Clear Chain</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#" id="loginBtn">Login</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Fight Corruption with Transparency</h1>
+            <p>Clear Chain is an innovative platform empowering citizens and government authorities to collaboratively detect, report, and eliminate corruption through blockchain-powered transparency.</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Report Anonymously</button>
+                <button class="btn btn-secondary">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="role-selection" id="roleSelection">
+        <h2 style="text-shadow: black 2px 2px;">Select Your Role</h2>
+            <div class="role-option citizen">
+                <p>Citizen</p>
+                <a href="./ClearChain-LoginCitizen.html"><img src="./man.png" style="width: fit-content; height: fit-content;"></a>
+            </div>
+            <div class="role-option admin">
+                <p>Government Officer</p>
+                <a href="./ClearChainLoginOfficer.html"><img src="./officer.png" style="width: fit-content; height: fit-content;"></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
