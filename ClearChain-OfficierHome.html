@@ -66,6 +66,8 @@
             justify-content: center; 
             align-items: center; 
             margin-top: 60px; 
+            opacity: 0; /* Start with opacity 0 for fade-in effect */
+            animation: fadeIn 1.5s ease-in-out forwards; /* Apply fade-in animation */
         }
 
         .welcome-text {
@@ -101,9 +103,22 @@
             box-shadow: 0 5px 15px rgba(230, 188, 0, 0.408);
             translate: translateY(10px);
         }
+
         a {
             text-decoration: none;
             color: white;
+        }
+
+        /* Define the fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px); /* Optional: Add a slight upward movement */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>

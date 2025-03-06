@@ -94,7 +94,8 @@
             font-size: 1.1rem;
         }
 
-        .nav input[type="button"] {
+        /* Updated CSS for the anchor tag */
+        .nav a.button, .nav input[type="submit"] {
             background: linear-gradient(45deg, #00e676, #00c853);
             color: white;
             width: 80%;
@@ -108,12 +109,13 @@
             position: relative;
             overflow: hidden;
             display: block;
-            /* margin-left: auto;
-            margin-right: auto; */
-            margin:auto;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: auto;
         }
 
-        .nav input[type="button"]:hover {
+        .nav a.button:hover, .nav input[type="submit"]:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 230, 118, 0.3);
             width: 50%;
@@ -128,51 +130,61 @@
             font-size: 1.2rem; /* Increased font size */
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
         }
-
-        /* Rest of the CSS... */
     </style>
 </head>
 <body>
     <div class="nav">
-        <!-- Form content remains the same -->
-        <div class="input-group">
-            <i class="fas fa-user input-icon"></i>
-            <input type="text" placeholder="Full Name">
-        </div>
+        <!-- Form content -->
+        <form id="signupForm">
+            <div class="input-group">
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" placeholder="Full Name" required>
+            </div>
 
-        <div class="input-group">
-            <i class="fas fa-id-card input-icon"></i>
-            <input type="text" id="AADHAR" placeholder="AADHAR Number" maxlength="12">
-        </div>
+            <div class="input-group">
+                <i class="fas fa-id-card input-icon"></i>
+                <input type="text" id="AADHAR" placeholder="AADHAR Number" maxlength="12" required>
+            </div>
 
-        <div class="input-group">
-            <i class="fas fa-phone input-icon"></i>
-            <input type="tel" placeholder="Phone Number">
-        </div>
+            <div class="input-group">
+                <i class="fas fa-phone input-icon"></i>
+                <input type="tel" placeholder="Phone Number" required>
+            </div>
 
-        <div class="input-group">
-            <i class="fas fa-calendar-day input-icon"></i>
-            <input type="date">
-        </div>
+            <div class="input-group">
+                <i class="fas fa-calendar-day input-icon"></i>
+                <input type="date" required>
+            </div>
 
-        <input type="button" value="Create Account">
+            <input type="submit" value="Create Account" onclick="alert('Account is Created')">
+        </form>
         
-        <p style=" border-radius: 20px; color: #ffffff; width: 80%; margin-left: auto; margin-right: auto; text-align: center;" text-shadow: black 2px 2px 2px;>
-            Already have an account? <a href="./ClearChain-LoginCitizen.html">Sign In</a>
+        <p style="border-radius: 20px; color: #ffffff; width: 80%; margin-left: auto; margin-right: auto; text-align: center;" text-shadow: black 2px 2px 2px;>
+            Already have an account? <a href="./ClearChain-LoginCitizen.html" >Sign In</a>
         </p>
     </div>
 
     <script>
-        // JavaScript remains the same
+        // JavaScript for form submission and button animation
         document.getElementById('AADHAR').addEventListener('input', function(e) {
             this.value = this.value.replace(/\D/g, '').slice(0, 12);
         });
 
-        document.querySelector('input[type="button"]').addEventListener('click', function() {
+        const submitButton = document.querySelector('input[type="submit"]');
+        submitButton.addEventListener('click', function(e) {
+            e.preventDefault();
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
             }, 200);
+            alert('Form submitted successfully!');
+        });
+
+        const signInLink = document.querySelector('.nav a[href="./ClearChain-LoginCitizen.html"]');
+        signInLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Redirecting to Sign In page...');
+            window.location.href = this.href;
         });
     </script>
 </body>
