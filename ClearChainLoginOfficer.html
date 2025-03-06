@@ -6,7 +6,6 @@
     <title>Login - Clear Chain</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        
         /* Consistent with Previous Theme */
         body {
             margin: 0;
@@ -19,7 +18,7 @@
             opacity: 0;
             animation: fadeIn 1s ease-in forwards;
             background: url(./back1.jpg);
-            background-size: cover  ;
+            background-size: cover;
             background-position: center;
         }
 
@@ -84,33 +83,34 @@
             font-size: 1.1rem;
         }
 
-        /* Consistent Button Styling */
-        .nav input[type="button"] {
-            background: linear-gradient(45deg, #e1813c, #c8a300);
-            color: white;
+        /* Anchor Tag Styling (Replacing Button) */
+        .nav a.button {
+            display: block;
             width: 80%;
             padding: 16px;
+            margin: 20px auto 0;
+            text-align: center;
+            background: linear-gradient(45deg, #e1813c, #c8a300);
+            color: white;
             font-weight: 600;
             letter-spacing: 0.8px;
             border: none;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 20px;
+            text-decoration: none;
             position: relative;
             overflow: hidden;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .nav input[type="button"]:hover {
+        .nav a.button:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(230, 188, 0, 0.408);
             width: 50%;
             border-radius: 30px;
         }
 
-        .nav input[type="button"]::after {
+        .nav a.button::after {
             content: '';
             position: absolute;
             top: -50%;
@@ -125,7 +125,7 @@
             transition: all 0.5s ease;
         }
 
-        .nav input[type="button"]:hover::after {
+        .nav a.button:hover::after {
             left: 150%;
         }
 
@@ -167,50 +167,11 @@
             <input type="text" id="AADHAR" placeholder="Officer ID">
         </div>
 
-        <input type="button" id="pass" value="Proceed" onclick="addPasswordField();" >
+        <a href="./ClearChain-OfficierHome.html" class="button" id="pass">Proceed</a>
 
-        <p style=" color: #ffffff; width: 70%; margin-left: auto; margin-right: auto; text-shadow: black 2px 2px 2px;">Don't have an account? <a href="./ClearChain-CreateOfficer.html">Create one</a></p>
+        <p style="color: #ffffff; width: 70%; margin-left: auto; margin-right: auto; text-shadow: black 2px 2px 2px;">Don't have an account? <a href="./ClearChain-CreateOfficer.html">Create one</a></p>
     </div>
 
-    <script>
-        document.getElementById('AADHAR').addEventListener('input', function(e) {
-            this.value = this.value.replace(/\D/g, '').slice(0, 12);
-        });
-
-        // Button Animation Consistency
-        document.querySelector('input[type="button"]').addEventListener('click', function() {
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 200);
-        });
-
-        function addPasswordField() {
-            alert('Password is your date of birth (ddmmyyyy)');
-
-            // Create new input group for password
-            const passwordInputGroup = document.createElement('div');
-            passwordInputGroup.className = 'input-group';
-
-            // Create icon for password input
-            const passwordIcon = document.createElement('i');
-            passwordIcon.className = 'fas fa-lock input-icon';
-
-            // Create password input field
-            const passwordInput = document.createElement('input');
-            passwordInput.type = 'password';
-            passwordInput.id = 'password';
-            passwordInput.placeholder = 'Password';
-
-            // Append icon and input to the input group
-            passwordInputGroup.appendChild(passwordIcon);
-            passwordInputGroup.appendChild(passwordInput);
-
-            // Insert the new input group before the "Proceed" button
-            const proceedButton = document.getElementById('pass');
-            proceedButton.parentNode.insertBefore(passwordInputGroup, proceedButton);
-    }
-    </script>
-    <script src="./offLogin.js"></script>
+    
 </body>
 </html>

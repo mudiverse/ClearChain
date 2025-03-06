@@ -17,7 +17,7 @@
             background: linear-gradient(135deg, #1a237e, #0d47a1);
             opacity: 0;
             animation: fadeIn 1s ease-in forwards;
-            background: url(./f10288725c82d5b89b9e2beb935f3711.jpg);
+            background: url(./7e208a0ba792fe54245f88f82ef56550.jpg);
             background-size: cover;
             background-position: center;
         }
@@ -83,33 +83,34 @@
             font-size: 1.1rem;
         }
 
-        /* Consistent Button Styling */
-        .nav input[type="button"] {
-            background: linear-gradient(45deg, #00e676, #00c853);
-            color: white;
+        /* Anchor Tag Styling (Replacing Button) */
+        .nav a.button {
+            display: block;
             width: 80%;
             padding: 16px;
+            margin: 20px auto 0;
+            text-align: center;
+            background: linear-gradient(45deg, #33c828, #c8a300);
+            color: white;
             font-weight: 600;
             letter-spacing: 0.8px;
             border: none;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 20px;
+            text-decoration: none;
             position: relative;
             overflow: hidden;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .nav input[type="button"]:hover {
+        .nav a.button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(230, 188, 0, 0.408);
+            box-shadow: 0 5px 15px rgba(54, 230, 0, 0.408);
             width: 50%;
             border-radius: 30px;
         }
 
-        .nav input[type="button"]::after {
+        .nav a.button::after {
             content: '';
             position: absolute;
             top: -50%;
@@ -124,7 +125,7 @@
             transition: all 0.5s ease;
         }
 
-        .nav input[type="button"]:hover::after {
+        .nav a.button:hover::after {
             left: 150%;
         }
 
@@ -138,7 +139,7 @@
         }
 
         .nav a {
-            color: #00e676;
+            color: #46ea05;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
@@ -165,50 +166,11 @@
             <i class="fas fa-id-card input-icon"></i>
             <input type="text" id="AADHAR" placeholder="AADHAR Number">
         </div>
+        <a href="./ClearChain-CitizenHome.html" class="button" id="pass">Proceed</a>
 
-        <input type="button" value="Proceed" onclick="addPasswordField()">
-
-        <p style="background-color: aliceblue; border-radius: 20px; color: #1a237e; width: 70%; margin-left: auto; margin-right: auto;">Don't have an account? <a href="./ClearChain-CreateAccount.html">Create one</a></p>
+        <p style="color: #ffffff; width: 70%; margin-left: auto; margin-right: auto; text-shadow: black 2px 2px 2px;">Don't have an account? <a href="./ClearChain-CreateAccount.html">Create one</a></p>
     </div>
 
-    <script>
-        document.getElementById('AADHAR').addEventListener('input', function(e) {
-            this.value = this.value.replace(/\D/g, '').slice(0, 12);
-        });
-
-        // Button Animation Consistency
-        document.querySelector('input[type="button"]').addEventListener('click', function() {
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 200);
-        });
-
-        function addPasswordField() {
-            alert('Password is your date of birth (ddmmyyyy)');
-
-            // Create new input group for password
-            const passwordInputGroup = document.createElement('div');
-            passwordInputGroup.className = 'input-group';
-
-            // Create icon for password input
-            const passwordIcon = document.createElement('i');
-            passwordIcon.className = 'fas fa-lock input-icon';
-
-            // Create password input field
-            const passwordInput = document.createElement('input');
-            passwordInput.type = 'password';
-            passwordInput.id = 'password';
-            passwordInput.placeholder = 'Password';
-
-            // Append icon and input to the input group
-            passwordInputGroup.appendChild(passwordIcon);
-            passwordInputGroup.appendChild(passwordInput);
-
-            // Insert the new input group before the "Proceed" button
-            const proceedButton = document.querySelector('input[type="button"]');
-            proceedButton.parentNode.insertBefore(passwordInputGroup, proceedButton);
-        }
-    </script>
+    
 </body>
 </html>
