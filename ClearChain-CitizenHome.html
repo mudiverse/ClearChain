@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="app.js" defer></script>
   <style>
-    /* Background and general styles */
+    
     body {
       margin: 0;
       padding: 0;
@@ -19,7 +19,7 @@
       font-family: Arial, sans-serif;
       color: white;
     }
-    /* Navbar styling */
+
     .navbar {
       position: fixed;
       top: 0;
@@ -52,7 +52,7 @@
     .navbar .nav-links a:hover {
       text-decoration: underline;
     }
-    /* Container styling */
+
     .container {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
@@ -105,7 +105,6 @@
       color: #956223;
       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
     }
-    /* Citizen sections */
     .citizen-section {
       display: none;
       background: rgba(255, 255, 255, 0.2);
@@ -134,7 +133,8 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2025/03/06/05/20250306052609-1AV9YWFC.js"></script>
   <div class="navbar">
     <div class="logo"><a href="#" id="logo">Clear Chain</a></div>
     <div class="nav-links">
@@ -145,7 +145,6 @@
     </div>
   </div>
 
-  <!-- Main Container -->
   <div class="container">
     <h1>Citizen Dashboard</h1>
     <div class="func">
@@ -158,7 +157,6 @@
       <input type="button" value="Approvals" onclick="showSection('approvalsSection')">
     </div>
     
-    <!-- Sections -->
     <div id="complaintSection" class="citizen-section">
       <h2>Complaint Window</h2>
       <p>File and view complaints here.</p>
@@ -167,7 +165,7 @@
     <div id="headlinesSection" class="citizen-section">
       <h2>Latest Headlines & Updates</h2>
       <div id="updatesContainer">
-        <!-- Updates will be populated here only when Headlines is clicked -->
+        
       </div>
     </div>
 
@@ -179,30 +177,28 @@
   </div>
 
   <script>
-    // API base URL (adjust if necessary)
     const API_BASE_URL = "http://localhost:3000";
     
-    // Function to hide all sections and show only the one specified
+
     function showSection(sectionId) {
       document.querySelectorAll('.citizen-section').forEach(section => {
         section.style.display = 'none';
       });
       document.getElementById(sectionId).style.display = 'block';
       
-      // If Headlines section is selected, fetch updates
       if (sectionId === 'headlinesSection') {
         fetchDocuments();
       }
     }
     
-    // Function to fetch documents from the API server and populate the headlines section
+    
     async function fetchDocuments() {
       try {
         document.getElementById('citizenStatus').innerText = "Fetching documents...";
         const response = await fetch(`${API_BASE_URL}/documents`);
         const docs = await response.json();
         const container = document.getElementById('updatesContainer');
-        container.innerHTML = ""; // Clear previous updates
+        container.innerHTML = "";
         if (docs.length === 0) {
           container.innerHTML = "<p>No updates available.</p>";
         } else {
