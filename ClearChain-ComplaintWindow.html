@@ -92,9 +92,54 @@
         .complaint-box::placeholder {
             color: rgba(0, 0, 0, 0.7);
         }
+
+        /* Styling for the navigation bar */
+        .navbar {
+            width: 100%;
+            background-color: rgba(129, 89, 40, 0.401); /* Make the navbar translucent */
+            padding: 10px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between; /* Adjust alignment */
+            align-items: center; /* Center items vertically */
+            z-index: 1;
+        }
+
+        .navbar .brand {
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow to text */
+        }
+
+        .navbar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, border-radius 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow to text */
+        }
+
+        .navbar a:hover {
+            background-color: #e3ba5f;
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <div class="brand">ClearChain</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">AI</a>
+        </div>
+    </div>
+
     <div class="container">
         <p class="msg">We will make sure that your complaint does not go unheard.</p>
         <input type="button" value="Write Your Complaint" class="butt" id="complaintButton">
