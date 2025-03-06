@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard - Issue Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  
+  <section id="adminPanel">
+    <h2>Issue Document</h2>
+    <label for="docType">Document Type:</label>
+    <select id="docType">
+      <option value="tender">Tender</option>
+      <option value="generic">Generic (Forms, Property Deals, etc.)</option>
+    </select>
+    <br>
+    <label for="docTitle">Title:</label>
+    <input type="text" id="docTitle" placeholder="Document Title">
+    <br>
+    <label for="docContent">Content:</label>
+    <textarea id="docContent" placeholder="Document Content"></textarea>
+    <br>
+    <!-- Tender-specific fields -->
+    <div id="tenderFields" style="display: none;">
+      <label for="tenderStartDate">Tender Start Date:</label>
+      <input type="date" id="tenderStartDate">
+      <br>
+      <label for="tenderExpectedBid">Tender Expected Bid Amount:</label>
+      <input type="number" id="tenderExpectedBid" placeholder="Expected Bid Amount">
+      <br>
+      <label for="daysLimit">Days Limit:</label>
+      <input type="number" id="daysLimit" placeholder="Days Limit">
+      <br>
+    </div>
+    <button id="btnIssueDocument">Issue Document</button>
+  </section>
+
+  <div id="adminStatus"></div>
+</body>
+</html>

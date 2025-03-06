@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  h1, h2 {
+    text-align: center;
+  }
+  
+  section {
+    background: #fff;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 4px;
+    max-width: 600px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+  
+  input, textarea, select, button {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1em;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    background: #e0e0e0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  #adminStatus, #citizenStatus {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  

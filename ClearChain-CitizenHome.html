@@ -1,218 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Function Hub - Clear Chain</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-
-        /* Consistent with Previous Theme */
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #1a237e, #0d47a1);
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-            background: url(./f10288725c82d5b89b9e2beb935f3711.jpg);
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: inherit;
-            filter: blur(0);
-            z-index: -1;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        .navbar {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 2;
-        }
-
-        .navbar a {
-            color: rgb(128, 120, 60);
-            text-decoration: none;
-            font-weight: 500;
-            margin: 0 15px;
-            transition: all 0.3s ease;
-            font-size: 1.3rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 20px;
-            padding: 40px;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transform: translateY(20px);
-            opacity: 0.2;
-            animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        @keyframes slideUp {
-            to { 
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .func {
-            width: 60%;
-            height: 150px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 15px;
-            margin: 20px auto;
-            display: block;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            position: relative;
-            text-shadow: black 1px 1px 2px;
-        }
-
-        .func:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .func input {
-            width: 100%;
-            height: 100%;
-            background-color: transparent;
-            border: none;
-            color: rgb(99, 94, 53);
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 20px;
-            box-sizing: border-box;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .func input:hover {
-            color: #956223;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-        }
-
-        .func::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.2), 
-                transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s ease;
-        }
-
-        .func:hover::after {
-            left: 150%;
-        }
-
-        #logo {
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: 90%;
-                padding: 20px;
-            }
-
-            .func {
-                width: 100%;
-                height: 120px;
-                margin: 10px 0;
-            }
-
-            .func input {
-                font-size: 16px;
-            }
-
-            #logo {
-                font-size: 1.5rem;
-                color: white;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Function Hub - Clear Chain</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="app.js" defer></script>
+  <style>
+    /* Background and general styles */
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url(./f10288725c82d5b89b9e2beb935f3711.jpg) no-repeat center center/cover;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    /* Navbar styling */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      padding: 15px 30px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+    }
+    .navbar .logo a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .navbar .nav-links a {
+      color: rgb(128, 120, 60);
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 15px;
+      transition: all 0.3s ease;
+      font-size: 1.3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .navbar .nav-links a:hover {
+      text-decoration: underline;
+    }
+    /* Container styling */
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(20px);
+      opacity: 0.9;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      margin-top: 100px;
+    }
+    .func {
+      width: 60%;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 15px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .func input {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      border: none;
+      color: rgb(99, 94, 53);
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .func input:hover {
+      color: #956223;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+    /* Citizen sections */
+    .citizen-section {
+      display: none;
+      background: rgba(255, 255, 255, 0.2);
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+    }
+    .citizen-section h2 {
+      margin-top: 0;
+    }
+    .update-item {
+      background: rgba(0, 0, 0, 0.3);
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .update-item p {
+      margin: 5px 0;
+    }
+    .status {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    
-    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2025/03/06/05/20250306052609-1AV9YWFC.js"></script>
-    
-    <div class="navbar">
-        <div class="logo">
-            <a href="#" id="logo">Clear Chain</a>
-        </div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Profile</a>
-            <a href="#">Services</a>
-            <a href="#">Logout</a>
-        </div>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo"><a href="#" id="logo">Clear Chain</a></div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Profile</a>
+      <a href="#">Services</a>
+      <a href="#">Logout</a>
     </div>
-    <div class="container">
-        <div class="func">
-            <input type="button" value="Complaint Window">
-        </div>
-        <div class="func">
-            <input type="button" value="Headlines">
-        </div>
-        <div class="func">
-            <input type="button" value="Approvals">
-        </div>
+  </div>
 
+  <!-- Main Container -->
+  <div class="container">
+    <h1>Citizen Dashboard</h1>
+    <div class="func">
+      <input type="button" value="Complaint Window" onclick="showSection('complaintSection')">
     </div>
+    <div class="func">
+      <input type="button" value="Headlines" onclick="showSection('headlinesSection')">
+    </div>
+    <div class="func">
+      <input type="button" value="Approvals" onclick="showSection('approvalsSection')">
+    </div>
+    
+    <!-- Sections -->
+    <div id="complaintSection" class="citizen-section">
+      <h2>Complaint Window</h2>
+      <p>File and view complaints here.</p>
+    </div>
+
+    <div id="headlinesSection" class="citizen-section">
+      <h2>Latest Headlines & Updates</h2>
+      <div id="updatesContainer">
+        <!-- Updates will be populated here only when Headlines is clicked -->
+      </div>
+    </div>
+
+    <div id="approvalsSection" class="citizen-section">
+      <h2>Approvals</h2>
+      <p>View pending approvals and status updates here.</p>
+    </div>
+    <div id="citizenStatus" class="status"></div>
+  </div>
+
+  <script>
+    // API base URL (adjust if necessary)
+    const API_BASE_URL = "http://localhost:3000";
+    
+    // Function to hide all sections and show only the one specified
+    function showSection(sectionId) {
+      document.querySelectorAll('.citizen-section').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById(sectionId).style.display = 'block';
+      
+      // If Headlines section is selected, fetch updates
+      if (sectionId === 'headlinesSection') {
+        fetchDocuments();
+      }
+    }
+    
+    // Function to fetch documents from the API server and populate the headlines section
+    async function fetchDocuments() {
+      try {
+        document.getElementById('citizenStatus').innerText = "Fetching documents...";
+        const response = await fetch(`${API_BASE_URL}/documents`);
+        const docs = await response.json();
+        const container = document.getElementById('updatesContainer');
+        container.innerHTML = ""; // Clear previous updates
+        if (docs.length === 0) {
+          container.innerHTML = "<p>No updates available.</p>";
+        } else {
+          docs.forEach(doc => {
+            let extra = "";
+            if (doc.type === "Tender") {
+              extra = `<p><strong>Start Date:</strong> ${doc.tenderStartDate}</p>
+                       <p><strong>Expected Bid:</strong> ${doc.tenderExpectedBid}</p>
+                       <p><strong>Days Limit:</strong> ${doc.tenderDaysLimit}</p>`;
+            }
+            const div = document.createElement('div');
+            div.className = 'update-item';
+            div.innerHTML = `
+              <p><strong>ID:</strong> ${doc.id}</p>
+              <p><strong>Type:</strong> ${doc.type}</p>
+              <p><strong>Title:</strong> ${doc.title}</p>
+              <p><strong>Content:</strong> ${doc.content}</p>
+              ${extra}
+              <p><strong>Timestamp:</strong> ${doc.timestamp}</p>
+            `;
+            container.appendChild(div);
+          });
+        }
+        document.getElementById('citizenStatus').innerText = "Documents fetched.";
+      } catch (error) {
+        document.getElementById('citizenStatus').innerText = "Error: " + error.message;
+        console.error(error);
+      }
+    }
+  </script>
 </body>
 </html>
