@@ -1,191 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account - Clear Chain</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Fixed Background */
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #1a237e, #0d47a1);
-            opacity: 20;
-            animation: fadeIn 1s ease-in forwards;
-            background: url(./f10288725c82d5b89b9e2beb935f3711.jpg) no-repeat center center fixed;
-            background-size: cover;
-            background-position: center;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        /* Glassmorphism Container */
-        .nav {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(36px);
-            border-radius: 20px;
-            padding: 40px;
-            width: 450px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transform: translateY(20px);
-            opacity: 10%;
-            animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        @keyframes slideUp {
-            to { 
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Rest of the CSS remains the same as previous version */
-        .nav p {
-            color: #fff;
-            font-size: 1.2rem; /* Increased font size */
-            margin: 15px 0 8px;
-            text-align: left;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
-        }
-
-        .input-group {
-            position: relative;
-            margin-bottom: 25px;
-        }
-
-        .nav input {
-            width: 85%;
-            padding: 14px 20px;
-            padding-left: 45px;
-            border: none;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav input:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .input-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #1a237e;
-            font-size: 1.1rem;
-        }
-
-        /* Updated CSS for the anchor tag */
-        .nav a.button, .nav input[type="submit"] {
-            background: linear-gradient(45deg, #00e676, #00c853);
-            color: white;
-            width: 80%;
-            padding: 16px;
-            font-weight: 600;
-            letter-spacing: 0.8px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 15px;
-            position: relative;
-            overflow: hidden;
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            margin: auto;
-        }
-
-        .nav a.button:hover, .nav input[type="submit"]:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 230, 118, 0.3);
-            width: 50%;
-            border-radius: 30px;
-        }
-
-        .nav a {
-            color: #00e676;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            font-size: 1.2rem; /* Increased font size */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account - Clear Chain</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Fixed Background */
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a237e, #0d47a1);
+      animation: fadeIn 1s ease-in forwards;
+      background: url(./f10288725c82d5b89b9e2beb935f3711.jpg) no-repeat center center fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    /* Glassmorphism Container */
+    .nav {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(36px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 450px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(20px);
+      animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @keyframes slideUp {
+      to { 
+          transform: translateY(0);
+          opacity: 1;
+      }
+    }
+    .nav p {
+      color: #fff;
+      font-size: 1.2rem;
+      margin: 15px 0 8px;
+      text-align: left;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .input-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+    .nav input {
+      width: 85%;
+      padding: 14px 20px;
+      padding-left: 45px;
+      border: none;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .nav input:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    .input-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #1a237e;
+      font-size: 1.1rem;
+    }
+    .nav a.button, .nav input[type="submit"] {
+      background: linear-gradient(45deg, #00e676, #00c853);
+      color: white;
+      width: 80%;
+      padding: 16px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+      position: relative;
+      overflow: hidden;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      margin: auto;
+    }
+    .nav a.button:hover, .nav input[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 230, 118, 0.3);
+      width: 50%;
+      border-radius: 30px;
+    }
+    .nav a {
+      color: #00e676;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .nav a:hover {
+      text-decoration: underline;
+      opacity: 0.9;
+    }
+  </style>
 </head>
 <body>
     <div class="nav">
-        <!-- Form content -->
+        <!-- Create Account Form -->
         <form id="signupForm">
             <div class="input-group">
                 <i class="fas fa-user input-icon"></i>
-                <input type="text" placeholder="Full Name" required>
+                <input type="text" id="fullName" placeholder="Full Name" required>
             </div>
 
             <div class="input-group">
                 <i class="fas fa-id-card input-icon"></i>
-                <input type="text" id="AADHAR" placeholder="AADHAR Number" maxlength="12" required>
+                <!-- Using a 5-digit ID -->
+                <input type="text" id="userId" placeholder="5-digit ID" maxlength="5" required>
             </div>
 
             <div class="input-group">
                 <i class="fas fa-phone input-icon"></i>
-                <input type="tel" placeholder="Phone Number" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
             </div>
 
             <div class="input-group">
                 <i class="fas fa-calendar-day input-icon"></i>
-                <input type="date" required>
+                <input type="date" id="dob" required>
             </div>
 
-            <input type="submit" value="Create Account" onclick="alert('Account is Created')">
+            <input type="submit" value="Create Account">
         </form>
         
-        <p style="border-radius: 20px; color: #ffffff; width: 80%; margin-left: auto; margin-right: auto; text-align: center;" text-shadow: black 2px 2px 2px;>
-            Already have an account? <a href="./ClearChain-LoginCitizen.html" >Sign In</a>
+        <p style="border-radius: 20px; color: #ffffff; width: 80%; margin-left: auto; margin-right: auto; text-align: center;">
+            Already have an account? <a href="./ClearChain-LoginCitizen.html">Sign In</a>
         </p>
     </div>
 
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
     <script>
-        // JavaScript for form submission and button animation
-        document.getElementById('AADHAR').addEventListener('input', function(e) {
-            this.value = this.value.replace(/\D/g, '').slice(0, 12);
-        });
+      // Firebase configuration: Replace with your actual config
+      const firebaseConfig = {
+  apiKey: "AIzaSyA573NNJhQStxbsTST8BDo_eksVfPGwgjo",
+  authDomain: "clearchain-d52ee.firebaseapp.com",
+  projectId: "clearchain-d52ee",
+  storageBucket: "clearchain-d52ee.firebasestorage.app",
+  messagingSenderId: "606183198176",
+  appId: "1:606183198176:web:aa50acba19ba7f97b66f85",
+  measurementId: "G-YTCHS4SR9Z"
+};
 
-        const submitButton = document.querySelector('input[type="submit"]');
-        submitButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = 'scale(1)';
-            }, 200);
-            alert('Form submitted successfully!');
-        });
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
 
-        const signInLink = document.querySelector('.nav a[href="./ClearChain-LoginCitizen.html"]');
-        signInLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            alert('Redirecting to Sign In page...');
-            window.location.href = this.href;
-        });
+      // Handle account creation
+      const signupForm = document.getElementById("signupForm");
+
+      signupForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const fullName = document.getElementById("fullName").value.trim();
+        const userId = document.getElementById("userId").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const dob = document.getElementById("dob").value;
+
+        if (userId.length !== 5) {
+          alert("User ID must be exactly 5 digits.");
+          return;
+        }
+
+        const userData = {
+          fullName: fullName,
+          id: userId,
+          phone: phone,
+          dob: dob,
+          // You can set a default role, e.g., 'citizen'
+          role: "citizen"
+        };
+
+        try {
+          // Save user data using userId as document ID
+          await db.collection("users").doc(userId).set(userData);
+          alert("Account created successfully!");
+          // Optionally, redirect to the login page:
+          window.location.href = "./ClearChain-LoginCitizen.html";
+        } catch (error) {
+          console.error("Error creating account:", error);
+          alert("Error creating account: " + error.message);
+        }
+      });
+
+      // Optional: Sanitize input to allow only numbers for the ID field
+      document.getElementById("userId").addEventListener("input", function() {
+        this.value = this.value.replace(/\D/g, '').slice(0, 5);
+      });
     </script>
 </body>
 </html>

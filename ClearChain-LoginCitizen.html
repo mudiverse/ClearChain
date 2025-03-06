@@ -1,176 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Clear Chain</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        /* Consistent with Previous Theme */
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #1a237e, #0d47a1);
-            opacity: 0;
-            animation: fadeIn 1s ease-in forwards;
-            background: url(./7e208a0ba792fe54245f88f82ef56550.jpg);
-            background-size: cover;
-            background-position: center;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        .nav {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 20px;
-            padding: 40px;
-            width: 450px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transform: translateY(20px);
-            opacity: 0.2;
-            animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        @keyframes slideUp {
-            to { 
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        /* Input Styling Matching Previous Theme */
-        .input-group {
-            position: relative;
-            margin-bottom: 30px;
-        }
-
-        .nav input {
-            width: 90%;
-            padding: 14px 0px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 45px;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.9);
-            font-size: 1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav input:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .input-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #1a237e;
-            font-size: 1.1rem;
-        }
-
-        /* Anchor Tag Styling (Replacing Button) */
-        .nav a.button {
-            display: block;
-            width: 80%;
-            padding: 16px;
-            margin: 20px auto 0;
-            text-align: center;
-            background: linear-gradient(45deg, #33c828, #c8a300);
-            color: white;
-            font-weight: 600;
-            letter-spacing: 0.8px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav a.button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(54, 230, 0, 0.408);
-            width: 50%;
-            border-radius: 30px;
-        }
-
-        .nav a.button::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.2), 
-                transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s ease;
-        }
-
-        .nav a.button:hover::after {
-            left: 150%;
-        }
-
-        /* Additional Link Styling */
-        .nav p {
-            text-align: center;
-            color: rgb(255, 255, 255);
-            margin-top: 25px;
-            font-size: 1.2rem; /* Increased font size */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
-        }
-
-        .nav a {
-            color: #46ea05;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            font-size: 1.2rem; /* Increased font size */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
-        }
-
-        .nav a:hover {
-            text-decoration: underline;
-            opacity: 0.9;
-        }
-
-        @media (max-width: 480px) {
-            .nav {
-                width: 90%;
-                padding: 30px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citizen Login - Clear Chain</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Your existing CSS styling remains unchanged */
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1a237e, #0d47a1);
+      background: url(./7e208a0ba792fe54245f88f82ef56550.jpg) no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+    .nav {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 450px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transform: translateY(20px);
+      animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    @keyframes slideUp {
+      to { 
+          transform: translateY(0);
+          opacity: 1;
+      }
+    }
+    .nav .input-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+    .nav input {
+      width: 85%;
+      padding: 14px 20px;
+      padding-left: 45px;
+      border: none;
+      margin: auto;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 1rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .nav input:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    .input-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #1a237e;
+      font-size: 1.1rem;
+    }
+    .nav a.button, .nav input[type="submit"] {
+      background: linear-gradient(45deg, #00e676, #00c853);
+      color: white;
+      width: 80%;
+      padding: 16px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+      position: relative;
+      overflow: hidden;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      margin: auto;
+    }
+    .nav a.button:hover, .nav input[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 230, 118, 0.3);
+      width: 50%;
+      border-radius: 30px;
+    }
+    .nav a {
+      color: #00e676;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+  </style>
 </head>
 <body>
-    <div class="nav">
-        <div class="input-group">
-            <i class="fas fa-id-card input-icon"></i>
-            <input type="text" id="AADHAR" placeholder="AADHAR Number">
-        </div>
-        <a href="./ClearChain-CitizenHome.html" class="button" id="pass">Proceed</a>
-
-        <p style="color: #ffffff; width: 70%; margin-left: auto; margin-right: auto; text-shadow: black 2px 2px 2px;">Don't have an account? <a href="./ClearChain-CreateAccount.html">Create one</a></p>
+  <div class="nav">
+    <div class="input-group">
+      <i class="fas fa-id-card input-icon"></i>
+      <input type="text" id="userId" placeholder="5-digit ID">
     </div>
+    <button class="button" id="loginBtn">Proceed</button>
+    <p style="border-radius: 20px; color: #ffffff; width: 80%; margin: auto; text-align: center;">
+      Don't have an account? <a href="./ClearChain-CreateAccount.html">Create one</a>
+    </p>
+  </div>
 
-    
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script>
+    // Firebase configuration (replace with your project's config)
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      // etc.
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    document.getElementById("loginBtn").addEventListener("click", async () => {
+      const userIdInput = document.getElementById("userId").value.trim();
+
+      // Check if ID is exactly 5 digits
+      if (userIdInput.length !== 5) {
+        alert("Please enter a valid 5-digit ID.");
+        return;
+      }
+
+      try {
+        const docRef = db.collection("users").doc(userIdInput);
+        const docSnap = await docRef.get();
+        if (!docSnap.exists) {
+          alert("No account found for this ID. Please create one or try again.");
+          return;
+        }
+        const userData = docSnap.data();
+        if (userData.role !== "citizen") {
+          alert("This ID is not registered as a citizen.");
+          return;
+        }
+        // If valid, redirect to Citizen Home Page
+        window.location.href = "./ClearChain-CitizenHome.html";
+      } catch (error) {
+        console.error(error);
+        alert("Error logging in: " + error.message);
+      }
+    });
+
+    // Ensure only numbers are entered in the ID field and limit length to 5
+    document.getElementById("userId").addEventListener("input", function() {
+      this.value = this.value.replace(/\D/g, '').slice(0, 5);
+    });
+  </script>
 </body>
 </html>
