@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a237e, #0d47a1);
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+            background: url(./f10288725c82d5b89b9e2beb935f3711.jpg);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .msg {
+            color: white;
+            font-size: 1.7rem;
+            text-align: center;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-shadow: black 0px 0px 10px;
+            margin-bottom: 20px;
+        }
+
+        .butt {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #b67d29;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .butt:hover {
+            background-color: #e3ba5f;
+            border-radius: 20px;
+            box-shadow: 0 0 10px 0 #e3ba5f;
+        }
+
+        /* Styling for the text box */
+        .complaint-box {
+            width: 95%;
+            height: 150px;
+            margin: 20px auto;
+            padding: 15px;
+            font-size: 1rem;
+            color: rgb(0, 0, 0);
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            resize: none; /* Disable resizing */
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .complaint-box:focus {
+            border-color: #e3ba5f;
+            box-shadow: 0 0 10px 0 #e3ba5f;
+        }
+
+        .complaint-box::placeholder {
+            color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="msg">We will make sure that your complaint does not go unheard.</p>
+        <input type="button" value="Write Your Complaint" class="butt" id="complaintButton">
+    </div>
+
+    <script>
+        // JavaScript to handle button click and text box creation
+        const complaintButton = document.getElementById('complaintButton');
+
+        complaintButton.addEventListener('click', function () {
+            // Check if the text box already exists
+            const textBox = document.querySelector('.complaint-box');
+            if (!textBox) {
+                // Create a new textarea element
+                const newTextBox = document.createElement('textarea');
+                newTextBox.classList.add('complaint-box');
+                newTextBox.setAttribute('placeholder', 'Please write your complaint here...');
+
+                // Insert the text box after the button
+                document.querySelector('.container').appendChild(newTextBox);
+
+                // Change button text to "Submit"
+                complaintButton.value = 'Submit';
+            } else {
+                // Handle submission when the button says "Submit"
+                const complaintText = textBox.value.trim();
+                if (complaintText) {
+                    alert('Thank you for submitting your complaint:\n\n' + complaintText);
+                    textBox.value = ''; // Clear the text box
+                    complaintButton.value = 'Write Your Complaint'; // Reset button text
+                    textBox.remove(); // Remove the text box
+                } else {
+                    alert('Please write your complaint before submitting.');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
