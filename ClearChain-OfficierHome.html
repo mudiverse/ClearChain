@@ -162,6 +162,9 @@
       <div class="func">
         <input type="button" id="btnTenders" value="Tenders">
       </div>
+      <div class="func">
+        <input type="button" id="btnReports" value="Reports" onclick="fetchReports()">
+      </div>
     </div>
 
     <!-- Input Sections -->
@@ -202,9 +205,16 @@
       <button id="btnSubmitTender">Submit Tender</button>
     </div>
 
+    <div id="reportsContainer">
+        <!-- Reports will be loaded here -->
+      </div>
+      
+
     <div class="status" id="statusMessage"></div>
   </div>
-
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <!-- Firebase Firestore (for database) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
   <script>
     // JavaScript to toggle input sections
     const btnForms = document.getElementById("btnForms");
@@ -286,6 +296,63 @@
       }
       submitDocument("Tender", title, content, { startDate, expectedBid, daysLimit });
     });
+
+
+    // firebase
+
+    const firebaseConfig = {
+  apiKey: "AIzaSyA573NNJhQStxbsTST8BDo_eksVfPGwgjo",
+  authDomain: "clearchain-d52ee.firebaseapp.com",
+  projectId: "clearchain-d52ee",
+  storageBucket: "clearchain-d52ee.firebasestorage.app",
+  messagingSenderId: "606183198176",
+  appId: "1:606183198176:web:aa50acba19ba7f97b66f85",
+  measurementId: "G-YTCHS4SR9Z"
+};
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Initialize Firestore
+  const db = firebase.firestore();
+
+  // Function to fetch reports from Firestore and display them in the reportsContainer
+  function fetchReports() {
+    const container = document.getElementById("reportsContainer");
+    container.innerHTML = "<p>Loading reports...</p>";
+
+    // Query the Firestore collection "reports"
+    db.collection("reports").get()
+      .then((querySnapshot) => {
+        container.innerHTML = ""; // Clear previous content
+        if (querySnapshot.empty) {
+          container.innerHTML = "<p>No reports available.</p>";
+        } else {
+          querySnapshot.forEach((doc) => {
+            const report = doc.data();
+            const reportElement = document.createElement("div");
+            reportElement.style.border = "1px solid #ccc";
+            reportElement.style.padding = "10px";
+            reportElement.style.marginBottom = "10px";
+            reportElement.style.borderRadius = "5px";
+            reportElement.style.backgroundColor = "rgba(255,255,255,0.8)";
+            reportElement.style.color = "#000";
+            reportElement.innerHTML = `
+              <h3>${report.name || "No name"}</h3>
+              <p>${report.description || "No Description"}</p>
+              <p><small>${report.location || "unknown"}</small></p>
+              <p><small>${report.date || "date"}</small></p>
+            `;
+            container.appendChild(reportElement);
+          });
+        }
+      })
+      .catch((error) => {
+        container.innerHTML = "<p>Error fetching reports: " + error.message + "</p>";
+        console.error("Error fetching reports: ", error);
+      });
+  }
+
   </script>
 </body>
 </html>
