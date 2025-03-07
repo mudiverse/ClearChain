@@ -20,6 +20,7 @@ A blockchain-powered platform to automate vulnerable processes and combat corrup
 ## 📸 Screenshots
 
 ### Web Dashboard Screenshots
+https://clear-chain.vercel.app/
 1. ![Dashboard 1](images/web8.png "Dashboard 1")
 2. ![Dashboard 2](images/web9.png "Dashboard 2")
 3. ![Dashboard 3](images/web3.png "Dashboard 3")
