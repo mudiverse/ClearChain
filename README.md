@@ -1,56 +1,64 @@
 # ClearChain - An Anti-Corruption System
 
-![ClearChain Banner](https://via.placeholder.com/800x200.png?text=ClearChain+Banner) <!-- Add your banner image -->
+![Logo](images/logo.jpg "Logo")
+<!-- Add your banner image below if desired -->
+![Banner](images/banner.jpg "Banner")
 
 A blockchain-powered platform to automate vulnerable processes and combat corruption through transparent governance.
 
-## 🚀 Features
+## 🚀 Key Features
 
-### Mobile Application (Flutter)
-- **Anonymous Reporting**: Secure whistleblowing system for corruption incidents
-- **Digital Form Submission**: Paperless processing of government forms/requests
-- **Case Tracking**: Real-time status updates on submitted reports and forms
-- **Identity Protection**: End-to-end encrypted submissions with zero-knowledge proofs
+- **Blockchain-based Tenders and Reports:**  
+  Automated, immutable recording of tenders and reports on the Ethereum blockchain.
+- **Anonymous Reporting Systems:**  
+  Secure whistleblowing system to anonymously report corruption incidents.
+- **Admin Dashboard (Verified Official):**  
+  A comprehensive web dashboard for government officials to verify, process, and audit submissions.
+- **Chat Bot Integration ("DEX"):**  
+  An integrated chatbot, DEX, to assist users with queries and guide them through reporting processes.
 
-### Web Dashboard
-- **Transparency Portal**: Public access to all processed forms and reports
-- **Smart Contract Integration**: Automated process execution via blockchain
-- **Analytics Dashboard**: Corruption pattern visualization and heatmaps
-- **Document Verification**: Blockchain-based audit trail for all transactions
+## 📸 Screenshots
 
-### Blockchain Backend
-- **Immutable Records**: Ethereum-based smart contract storage
-- **Process Automation**: Self-executing workflows for approvals/verifications
-- **Decentralized Storage**: IPFS integration for document security
-- **Tokenized Incentives**: Reward system for valid corruption reports
+### Web Dashboard Screenshots
+1. ![Dashboard 1](images/web8.png "Dashboard 1")
+2. ![Dashboard 2](images/web9.png "Dashboard 2")
+3. ![Dashboard 3](images/web3.png "Dashboard 3")
+4. ![Dashboard 4](images/web4.png "Dashboard 4")
+5. ![Dashboard 5](images/web5.png "Dashboard 5")
+6. ![Dashboard 6](images/web6.png "Dashboard 6")
+7. ![Dashboard 7](images/web1.png "Dashboard 7")
+8. ![Dashboard 8](images/web2.png "Dashboard 8")
+9. ![Dashboard 9](images/web3.png "Dashboard 9")
+
+### Mobile App Screenshots
+
+#### Reporting using App
+- ![Report Form](images/flutter0.jpg "Landing Page")
+- ![Report Submission](images/flutter1.jpg "Report Submission")
+- ![Report Form](images/flutter2.jpg "Report Form")
+
 
 ## ⚙️ Tech Stack
 
 **Frontend**  
 - Flutter (Mobile App)
-- HTML/ CSS/ JS +React.js (Web Dashboard)
+- HTML / CSS / JS (Web Dashboard)
 
 **Backend**  
 - Node.js + Express.js
 - Solidity Smart Contracts
 - Ethereum Blockchain
-- IPFS (Document Storage)
-
-**Security**  
-- Zero-Knowledge Proofs (ZK-SNARKs)
-- End-to-End Encryption
-- Multi-factor Authentication
+- Firebase Storage
 
 ## 📲 Installation
 
 ### Mobile App
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/clearchain.git
+git clone https://github.com/mudiverse/ClearChain.git
 
 # Install dependencies
 flutter pub get
 
 # Run application
 flutter run
-
