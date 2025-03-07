@@ -1,0 +1,2 @@
+C:/Users/mudit/StudioProjects/test_clearchain/android/app/.cxx/Debug/4l3q4nl1/x86_64/CMakeFiles/edit_cache.dir
+C:/Users/mudit/StudioProjects/test_clearchain/android/app/.cxx/Debug/4l3q4nl1/x86_64/CMakeFiles/rebuild_cache.dir

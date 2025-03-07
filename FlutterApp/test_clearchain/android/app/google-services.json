@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "606183198176",
+    "project_id": "clearchain-d52ee",
+    "storage_bucket": "clearchain-d52ee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606183198176:android:8e932ec2099d805cb66f85",
+        "android_client_info": {
+          "package_name": "com.example.test_clearchain"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsI4ZzvYoonJaLeW5WbQcKd64B3nUQdyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
